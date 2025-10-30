@@ -4,9 +4,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Muffin-laboratory/mf/builders"
-	"github.com/Muffin-laboratory/mf/commands"
-	"github.com/Muffin-laboratory/mf/utils"
+	"github.com/Migan178/HennaDM/builders"
+	"github.com/Migan178/HennaDM/commands"
+	"github.com/Migan178/HennaDM/utils"
 	"github.com/bwmarrin/discordgo"
 )
 

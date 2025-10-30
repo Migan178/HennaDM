@@ -3,7 +3,7 @@ package handler
 import (
 	"fmt"
 
-	"github.com/Muffin-laboratory/mf/commands"
+	"github.com/Migan178/HennaDM/commands"
 	"github.com/bwmarrin/discordgo"
 )
 

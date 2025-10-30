@@ -1,4 +1,4 @@
-module github.com/Muffin-laboratory/mf
+module github.com/Migan178/HennaDM
 
 go 1.24.5
 

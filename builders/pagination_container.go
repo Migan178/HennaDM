@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math/rand"
 
-	"github.com/Muffin-laboratory/mf/utils"
+	"github.com/Migan178/HennaDM/utils"
 	"github.com/bwmarrin/discordgo"
 )
 

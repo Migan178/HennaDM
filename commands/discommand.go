@@ -3,8 +3,8 @@ package commands
 import (
 	"sync"
 
-	"github.com/Muffin-laboratory/mf/builders"
-	"github.com/Muffin-laboratory/mf/configs"
+	"github.com/Migan178/HennaDM/builders"
+	"github.com/Migan178/HennaDM/configs"
 	"github.com/bwmarrin/discordgo"
 )
 

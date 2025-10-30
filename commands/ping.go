@@ -3,7 +3,7 @@ package commands
 import (
 	"fmt"
 
-	"github.com/Muffin-laboratory/mf/builders"
+	"github.com/Migan178/HennaDM/builders"
 	"github.com/bwmarrin/discordgo"
 )
 

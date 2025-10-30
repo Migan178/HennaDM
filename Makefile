@@ -1,4 +1,4 @@
-APP_NAME := mf
+APP_NAME := HennaDM
 BIN_DIR := build
 
 EXT :=
@@ -7,7 +7,7 @@ ifeq ($(OS),Windows_NT)
 endif
 
 BIN := $(BIN_DIR)/$(APP_NAME)$(EXT)
-PKG := github.com/Muffin-laboratory/mf
+PKG := github.com/Migan178/HennaDM
 
 .PHONY: all build run fmt vet deps
 

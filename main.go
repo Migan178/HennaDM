@@ -6,8 +6,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/Muffin-laboratory/mf/commands"
-	"github.com/Muffin-laboratory/mf/configs"
+	"github.com/Migan178/HennaDM/commands"
+	"github.com/Migan178/HennaDM/configs"
 	"github.com/bwmarrin/discordgo"
 )
 
