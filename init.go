@@ -19,4 +19,5 @@ func init() {
 	// Handler
 	go dg.AddHandler(handler.InteractionCreate)
 	go dg.AddHandler(handler.GuildMemberAdd)
+	go dg.AddHandler(handler.GuildMemberRemove)
 }
