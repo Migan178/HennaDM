@@ -3,6 +3,7 @@ package handler
 import (
 	"fmt"
 
+	"github.com/Migan178/HennaDM/configs"
 	"github.com/bwmarrin/discordgo"
 )
 
@@ -17,7 +18,7 @@ func GuildMemberAdd(s *discordgo.Session, m *discordgo.GuildMemberAdd) {
 		var hennaDMOpenCategory *discordgo.Channel
 
 		for _, c := range channels {
-			if c.Type == discordgo.ChannelTypeGuildCategory && c.Name == "hdm-open" {
+			if c.Type == discordgo.ChannelTypeGuildCategory && c.Name == configs.GetConfig().Bot.OpenCategoryName {
 				hennaDMOpenCategory = c
 				break
 			}

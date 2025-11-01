@@ -8,9 +8,10 @@ import (
 )
 
 type botConfig struct {
-	Token   string
-	Prefix  string
-	OwnerID string
+	Token              string
+	OwnerID            string
+	OpenCategoryName   string
+	ClosedCategoryName string
 }
 
 type commandConfig struct {
@@ -51,9 +52,10 @@ func getValue(key string) string {
 
 func setConfig(config *MFConfig) {
 	config.Bot = botConfig{
-		Prefix:  getRequiredValue("BOT_PREFIX"),
-		Token:   getRequiredValue("BOT_TOKEN"),
-		OwnerID: getRequiredValue("BOT_OWNER_ID"),
+		Token:              getRequiredValue("BOT_TOKEN"),
+		OwnerID:            getRequiredValue("BOT_OWNER_ID"),
+		OpenCategoryName:   getRequiredValue("BOT_OPEN_CATEGORY_NAME"),
+		ClosedCategoryName: getRequiredValue("BOT_CLOSED_CATEGORY_NAME"),
 	}
 
 	config.Command = commandConfig{
