@@ -3,6 +3,7 @@ package handler
 import (
 	"fmt"
 
+	"github.com/Migan178/HennaDM/builders"
 	"github.com/Migan178/HennaDM/configs"
 	"github.com/bwmarrin/discordgo"
 )
@@ -24,7 +25,7 @@ func GuildMemberAdd(s *discordgo.Session, m *discordgo.GuildMemberAdd) {
 			}
 		}
 
-		if _, err = s.GuildChannelCreateComplex(m.GuildID, discordgo.GuildChannelCreateData{
+		c, err := s.GuildChannelCreateComplex(m.GuildID, discordgo.GuildChannelCreateData{
 			Type:     discordgo.ChannelTypeGuildText,
 			Name:     m.User.Username,
 			ParentID: hennaDMOpenCategory.ID,
@@ -36,10 +37,22 @@ func GuildMemberAdd(s *discordgo.Session, m *discordgo.GuildMemberAdd) {
 					Allow: discordgo.PermissionAllText,
 				},
 			},
-		}); err != nil {
+		})
+		if err != nil {
 			fmt.Println(err)
 			return
 		}
+
+		s.ChannelMessageSendComplex(c.ID, &discordgo.MessageSend{
+			Flags: discordgo.MessageFlagsIsComponentsV2,
+			Components: []discordgo.MessageComponent{
+				builders.TextDisplayBuilder(m.User.Mention()).
+					Build(),
+				builders.ContainerBuilder().
+					AddText("### 알림\n 서로 존중하며 대화하시길 바라요.").
+					Build(),
+			},
+		})
 	}()
 
 }
