@@ -33,15 +33,9 @@ func GuildMemberRemove(s *discordgo.Session, m *discordgo.GuildMemberRemove) {
 
 		}
 
-		if _, err := s.ChannelEditComplex(userChannel.ID, &discordgo.ChannelEdit{
-			ParentID: hennaDMClosedCategory.ID,
-			PermissionOverwrites: []*discordgo.PermissionOverwrite{
-				{
-					ID:   m.GuildID,
-					Type: discordgo.PermissionOverwriteTypeRole,
-					Deny: discordgo.PermissionAll,
-				},
-			},
+		if _, err := s.ChannelEdit(userChannel.ID, &discordgo.ChannelEdit{
+			ParentID:             hennaDMClosedCategory.ID,
+			PermissionOverwrites: hennaDMClosedCategory.PermissionOverwrites,
 		}); err != nil {
 			fmt.Println(err)
 			return
