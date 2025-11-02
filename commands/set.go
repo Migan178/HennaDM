@@ -2,6 +2,7 @@ package commands
 
 import (
 	"github.com/Migan178/HennaDM/builders"
+	"github.com/Migan178/HennaDM/configs"
 	"github.com/bwmarrin/discordgo"
 )
 
@@ -19,13 +20,13 @@ var SetCommand = &Command{
 		}
 
 		for _, ch := range channels {
-			if ch.Name == "hdm-open" && ch.Type == discordgo.ChannelTypeGuildCategory {
+			if ch.Name == configs.GetConfig().Bot.OpenCategoryName && ch.Type == discordgo.ChannelTypeGuildCategory {
 				existOpenCategory = true
 
 				continue
 			}
 
-			if ch.Name == "hdm-closed" && ch.Type == discordgo.ChannelTypeGuildCategory {
+			if ch.Name == configs.GetConfig().Bot.ClosedCategoryName && ch.Type == discordgo.ChannelTypeGuildCategory {
 				existClosedCategory = true
 
 				continue
